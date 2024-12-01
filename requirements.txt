@@ -2,6 +2,7 @@ accelerate
 beautifulsoup4
 bitsandbytes
 blingfire
+faiss-gpu
 hf-transfer
 huggingface-hub
 loguru

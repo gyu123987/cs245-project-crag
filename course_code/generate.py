@@ -92,14 +92,21 @@ if __name__ == "__main__":
 
     parser.add_argument("--model_name", type=str, default="vanilla_baseline",
                         choices=["vanilla_baseline",
-                                 "rag_baseline"
+                                 "rag_baseline",
+                                 "rag_baseline_1",
+                                 "rag_baseline_few",
+                                 "rag_baseline_dynamic_sentence",
+                                 "rag_baseline_0_COT",
+                                 "rag_baseline_1_COT",
+                                 "rag_baseline_few_COT"
                                  # add your model here
                                  ],
                         )
 
-    parser.add_argument("--llm_name", type=str, default="meta-llama/Llama-3.2-3B-Instruct",
+    parser.add_argument("--llm_name", type=str, default="meta-llama/Llama-3.2-1B-Instruct",
                         choices=["meta-llama/Llama-3.2-3B-Instruct",
                                  "google/gemma-2-2b-it",
+                                 "meta-llama/Llama-3.2-1B-Instruct"
                                  # can add more llm models here
                                  ])
     parser.add_argument("--is_server", action="store_true", default=False,
@@ -129,6 +136,24 @@ if __name__ == "__main__":
         model = InstructModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
     elif model_name == "rag_baseline":
         from rag_baseline import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_1":
+        from rag_baseline_1 import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_few":
+        from rag_baseline_few import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_dynamic_sentence":
+        from rag_baseline_dynamic_sentence import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_0_COT":
+        from rag_baseline_0_COT import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_1_COT":
+        from rag_baseline_1_COT import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_few_COT":
+        from rag_baseline_few_COT import RAGModel
         model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
     # elif model_name == "your_model":
     #     add your model here
