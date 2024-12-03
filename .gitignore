@@ -1,7 +1,9 @@
 .vscode
 __pycache__
 api_responses
-data
+/data
+output/data/**/llm_evaluation_logs.json
+output/data/**/predictions.json
 
 
 # Python
