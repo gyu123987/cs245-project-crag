@@ -98,7 +98,16 @@ if __name__ == "__main__":
                                  "rag_baseline_dynamic_sentence",
                                  "rag_baseline_0_COT",
                                  "rag_baseline_1_COT",
-                                 "rag_baseline_few_COT"
+                                 "rag_baseline_few_COT",
+                                 "rag_baseline_knn_cosine",
+                                 "rag_baseline_knn_euclidean",
+                                 "rag_baseline_knn_manhattan",
+                                 "rag_baseline_context_5",
+                                 "rag_baseline_context_10",
+                                 "rag_baseline_context_30",
+                                 "rag_baseline_rerank_BERT",
+                                 "rag_baseline_filter",
+                                 "rag_baseline_summarize"
                                  # add your model here
                                  ],
                         )
@@ -155,6 +164,35 @@ if __name__ == "__main__":
     elif model_name == "rag_baseline_few_COT":
         from rag_baseline_few_COT import RAGModel
         model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_knn_cosine":
+        from rag_baseline_knn_cosine import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_knn_euclidean":
+        from rag_baseline_knn_euclidean import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_knn_manhattan":
+        from rag_baseline_knn_manhattan import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_context_5":
+        from rag_baseline_context_5 import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_context_10":
+        from rag_baseline_context_10 import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_context_30":
+        from rag_baseline_context_30 import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_rerank_BERT":
+        from rag_baseline_rerank_BERT import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_filter":
+        from rag_baseline_filter import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_summarize":
+        from rag_baseline_summarize import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    
+
     # elif model_name == "your_model":
     #     add your model here
     else:

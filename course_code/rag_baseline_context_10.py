@@ -3,7 +3,6 @@ from collections import defaultdict
 from typing import Any, Dict, List
 
 import numpy as np
-import faiss
 import ray
 import torch
 import vllm
@@ -18,7 +17,7 @@ from tqdm import tqdm
 #### CONFIG PARAMETERS ---
 
 # Define the number of context sentences to consider for generating an answer.
-NUM_CONTEXT_SENTENCES = 20
+NUM_CONTEXT_SENTENCES = 10
 # Set the maximum length for each context sentence (in characters).
 MAX_CONTEXT_SENTENCE_LENGTH = 1000
 # Set the maximum context references length (in characters).
@@ -143,18 +142,7 @@ class RAGModel:
     """
     def __init__(self, llm_name="meta-llama/Llama-3.2-3B-Instruct", is_server=False, vllm_server=None):
         self.initialize_models(llm_name, is_server, vllm_server)
-        self.chunk_extractor = ChunkExtractor() 
-        self.faiss_index = None
-
-    def build_faiss_index(self, embeddings):
-        embedding_dim = embeddings.shape[1]
-        self.faiss_index = faiss.IndexFlatL2(embedding_dim)
-        self.faiss_index.add(embeddings)
-
-    def knn_retrieve(self, query_embedding, k):
-        distances, indices = self.faiss_index.search(query_embedding, k)
-        return indices[0]
-
+        self.chunk_extractor = ChunkExtractor()
 
     def initialize_models(self, llm_name, is_server, vllm_server):
         self.llm_name = llm_name
@@ -267,8 +255,6 @@ class RAGModel:
 
         # Calculate all chunk embeddings
         chunk_embeddings = self.calculate_embeddings(chunks)
-        if self.faiss_index is None:
-            self.build_faiss_index(chunk_embeddings)
 
         # Calculate embeddings for queries
         query_embeddings = self.calculate_embeddings(queries)
@@ -278,12 +264,25 @@ class RAGModel:
         for _idx, interaction_id in enumerate(batch_interaction_ids):
             query = queries[_idx]
             query_time = query_times[_idx]
-            query_embedding = query_embeddings[_idx].reshape(1, -1)
+            query_embedding = query_embeddings[_idx]
 
-            top_indices = self.knn_retrieve(query_embedding, NUM_CONTEXT_SENTENCES)
+            # Identify chunks that belong to this interaction_id
+            relevant_chunks_mask = chunk_interaction_ids == interaction_id
 
-            # Retrieve the corresponding chunks
-            retrieval_results = chunks[top_indices]
+            # Filter out the said chunks and corresponding embeddings
+            relevant_chunks = chunks[relevant_chunks_mask]
+            relevant_chunks_embeddings = chunk_embeddings[relevant_chunks_mask]
+
+            # Calculate cosine similarity between query and chunk embeddings,
+            cosine_scores = (relevant_chunks_embeddings * query_embedding).sum(1)
+
+            # and retrieve top-N results.
+            retrieval_results = relevant_chunks[
+                (-cosine_scores).argsort()[:NUM_CONTEXT_SENTENCES]
+            ]
+            
+            # You might also choose to skip the steps above and 
+            # use a vectorDB directly.
             batch_retrieval_results.append(retrieval_results)
             
         # Prepare formatted prompts from the LLM        

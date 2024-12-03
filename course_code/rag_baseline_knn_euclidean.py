@@ -9,6 +9,7 @@ import vllm
 from blingfire import text_to_sentences_and_offsets
 from bs4 import BeautifulSoup
 from sentence_transformers import SentenceTransformer
+from sklearn.neighbors import NearestNeighbors
 
 from openai import OpenAI
 
@@ -255,7 +256,7 @@ class RAGModel:
 
         # Calculate all chunk embeddings
         chunk_embeddings = self.calculate_embeddings(chunks)
-
+        
         # Calculate embeddings for queries
         query_embeddings = self.calculate_embeddings(queries)
 
@@ -273,13 +274,12 @@ class RAGModel:
             relevant_chunks = chunks[relevant_chunks_mask]
             relevant_chunks_embeddings = chunk_embeddings[relevant_chunks_mask]
 
-            # Calculate cosine similarity between query and chunk embeddings,
-            cosine_scores = (relevant_chunks_embeddings * query_embedding).sum(1)
+            knn_model = NearestNeighbors(n_neighbors=min(NUM_CONTEXT_SENTENCES, len(relevant_chunks_embeddings)), metric="euclidean")
+            knn_model.fit(relevant_chunks_embeddings)
+            distances, indices = knn_model.kneighbors(query_embedding.reshape(1, -1))
 
             # and retrieve top-N results.
-            retrieval_results = relevant_chunks[
-                (-cosine_scores).argsort()[:NUM_CONTEXT_SENTENCES]
-            ]
+            retrieval_results = relevant_chunks[indices.flatten()]
             
             # You might also choose to skip the steps above and 
             # use a vectorDB directly.
@@ -298,7 +298,7 @@ class RAGModel:
                 top_p=0.9,  # Float that controls the cumulative probability of the top tokens to consider.
                 temperature=0.1,  # randomness of the sampling
                 # skip_special_tokens=True,  # Whether to skip special tokens in the output.
-                max_tokens=75,  # Maximum number of tokens to generate per output sequence.
+                max_tokens=50,  # Maximum number of tokens to generate per output sequence.
             )
             answers = [response.choices[0].message.content]
         else:
@@ -309,7 +309,7 @@ class RAGModel:
                     top_p=0.9,  # Float that controls the cumulative probability of the top tokens to consider.
                     temperature=0.1,  # randomness of the sampling
                     skip_special_tokens=True,  # Whether to skip special tokens in the output.
-                    max_tokens=75,  # Maximum number of tokens to generate per output sequence.
+                    max_tokens=50,  # Maximum number of tokens to generate per output sequence.
                 ),
                 use_tqdm=False
             )
@@ -328,37 +328,14 @@ class RAGModel:
         - query_times (List[str]): A list of query_time strings corresponding to each query.
         - batch_retrieval_results (List[str])
         """        
-        system_prompt = "You are provided with a question and various references. If the references do not contain the necessary information to answer the question, respond with 'I don't know'. You are an expert on answering questions about the subject. Always explain your reasoning step-by-step before providing the final answer."
+        system_prompt = "You are provided with a question and various references. Your task is to answer the question succinctly, using the fewest words possible. If the references do not contain the necessary information to answer the question, respond with 'I don't know'. There is no need to explain the reasoning behind your answers."
         formatted_prompts = []
-
-        few_shot_example = [{
-            "references": "- Paris is the capital of the country with the Eiffel Tower. \n- European art and culture has had a long history from France, Italy, and Spain.\n- The Eiffel tower is located in France",
-            "question": "what is the capital of france?",
-            "answer": "Paris. Paris is the capital of France. The references tell us that Paris is the capital of the country with the Eiffel Tower, and since the Eiffel Tower is located in France, we know that Paris is the capital of France."
-        }, {
-            "references": "- The USA, located in the beautiful land of North America \n- Brazil is located in South America and has beautiful jungles \n- Canada and Mexico border the US in north america",
-            "question": "what are all three countries in north america?",
-            "answer": "USA, Canada, Mexico. The references tell us that the USA is located in North America and that Canada and Mexico are also in North America."
-        }, {
-            "references": "- Japan made 5.118 trillion USD in 2019 \n- pokemon is a popular video game that originates from japan \n- japan has a long rich history with culture and art \n- Japan is a global economic power",
-            "question": "what is the gdp of japan in 2022?",
-            "answer": "invalid question. We don't have enough information as references do not mention the gdp in 2022."
-        }]
 
         for _idx, query in enumerate(queries):
             query_time = query_times[_idx]
             retrieval_results = batch_retrieval_results[_idx]
 
             user_message = ""
-
-            for ex in few_shot_example:
-                user_message += f"""
-                Example:
-                    References \n{ex['references']}
-                    Using only the references listed above, answer the following question: \n
-                    Question: {ex['question']}
-                    Answer: {ex['answer']}\n
-                """
             references = ""
             
             if len(retrieval_results) > 0:
@@ -370,9 +347,9 @@ class RAGModel:
             references = references[:MAX_CONTEXT_REFERENCES_LENGTH]
             # Limit the length of references to fit the model's input size.
 
-            user_message += f"\n------\n\nUsing only the references listed below, answer the following question: \n"
             user_message += f"{references}\n------\n\n"
             user_message 
+            user_message += f"Using only the references listed above, answer the following question: \n"
             user_message += f"Current Time: {query_time}\n"
             user_message += f"Question: {query}\n"
 

@@ -2,12 +2,12 @@ accelerate
 beautifulsoup4
 bitsandbytes
 blingfire
-faiss-gpu
 hf-transfer
 huggingface-hub
 loguru
 lxml
 openai==1.13.3
+scikit-learn
 sentence_transformers
 torch
 transformers

@@ -9,6 +9,7 @@ import vllm
 from blingfire import text_to_sentences_and_offsets
 from bs4 import BeautifulSoup
 from sentence_transformers import SentenceTransformer
+from transformers import pipeline
 
 from openai import OpenAI
 
@@ -19,9 +20,9 @@ from tqdm import tqdm
 # Define the number of context sentences to consider for generating an answer.
 NUM_CONTEXT_SENTENCES = 20
 # Set the maximum length for each context sentence (in characters).
-MAX_CONTEXT_SENTENCE_LENGTH = 1000
+MAX_CONTEXT_SENTENCE_LENGTH = 1500
 # Set the maximum context references length (in characters).
-MAX_CONTEXT_REFERENCES_LENGTH = 4000
+MAX_CONTEXT_REFERENCES_LENGTH = 4500
 
 # Batch size you wish the evaluators will use to call the `batch_generate_answer` function
 AICROWD_SUBMISSION_BATCH_SIZE = 1 # TUNE THIS VARIABLE depending on the number of GPUs you are requesting and the size of your model.
@@ -66,12 +67,20 @@ class ChunkExtractor:
 
         # Initialize a list to store sentences
         chunks = []
+        current_chunk = ""
 
         # Iterate through the list of offsets and extract sentences
         for start, end in offsets:
-            # Extract the sentence and limit its length
-            sentence = text[start:end][:MAX_CONTEXT_SENTENCE_LENGTH]
-            chunks.append(sentence)
+            sentence = text[start:end]
+
+            if len(current_chunk) + len(sentence) <= MAX_CONTEXT_SENTENCE_LENGTH:
+                current_chunk += " " + sentence
+            else:
+                chunks.append(current_chunk.strip())
+                current_chunk = sentence
+
+        if current_chunk:
+            chunks.append(current_chunk.strip())
 
         return interaction_id, chunks
 
@@ -143,6 +152,17 @@ class RAGModel:
     def __init__(self, llm_name="meta-llama/Llama-3.2-3B-Instruct", is_server=False, vllm_server=None):
         self.initialize_models(llm_name, is_server, vllm_server)
         self.chunk_extractor = ChunkExtractor()
+        self.summarizer = pipeline("summarization", model="t5-small", device="cuda")
+    
+    def summarize_context(self, chunks):
+        """
+        Summarizes the retrieved chunks to focus on the most critical information.
+        """
+        summaries = []
+        for chunk in chunks:
+            summary = self.summarizer(chunk, max_length=40, min_length=10, do_sample=False)
+            summaries.append(summary[0]["summary_text"])
+        return summaries
 
     def initialize_models(self, llm_name, is_server, vllm_server):
         self.llm_name = llm_name
@@ -280,10 +300,12 @@ class RAGModel:
             retrieval_results = relevant_chunks[
                 (-cosine_scores).argsort()[:NUM_CONTEXT_SENTENCES]
             ]
-            
+
+            summarized_results = self.summarize_context(retrieval_results)
+
             # You might also choose to skip the steps above and 
             # use a vectorDB directly.
-            batch_retrieval_results.append(retrieval_results)
+            batch_retrieval_results.append(summarized_results)
             
         # Prepare formatted prompts from the LLM        
         formatted_prompts = self.format_prompts(queries, query_times, batch_retrieval_results)
@@ -298,7 +320,7 @@ class RAGModel:
                 top_p=0.9,  # Float that controls the cumulative probability of the top tokens to consider.
                 temperature=0.1,  # randomness of the sampling
                 # skip_special_tokens=True,  # Whether to skip special tokens in the output.
-                max_tokens=75,  # Maximum number of tokens to generate per output sequence.
+                max_tokens=50,  # Maximum number of tokens to generate per output sequence.
             )
             answers = [response.choices[0].message.content]
         else:
@@ -309,7 +331,7 @@ class RAGModel:
                     top_p=0.9,  # Float that controls the cumulative probability of the top tokens to consider.
                     temperature=0.1,  # randomness of the sampling
                     skip_special_tokens=True,  # Whether to skip special tokens in the output.
-                    max_tokens=75,  # Maximum number of tokens to generate per output sequence.
+                    max_tokens=50,  # Maximum number of tokens to generate per output sequence.
                 ),
                 use_tqdm=False
             )
@@ -328,37 +350,14 @@ class RAGModel:
         - query_times (List[str]): A list of query_time strings corresponding to each query.
         - batch_retrieval_results (List[str])
         """        
-        system_prompt = "You are provided with a question and various references. If the references do not contain the necessary information to answer the question, respond with 'I don't know'. You are an expert on answering questions about the subject. Always explain your reasoning step-by-step before providing the final answer."
+        system_prompt = "You are provided with a question and various references. Your task is to answer the question succinctly, using the fewest words possible. If the references do not contain the necessary information to answer the question, respond with 'I don't know'. There is no need to explain the reasoning behind your answers."
         formatted_prompts = []
-
-        few_shot_example = [{
-            "references": "- Paris is the capital of the country with the Eiffel Tower. \n- European art and culture has had a long history from France, Italy, and Spain.\n- The Eiffel tower is located in France",
-            "question": "what is the capital of france?",
-            "answer": "Paris. Paris is the capital of France. The references tell us that Paris is the capital of the country with the Eiffel Tower, and since the Eiffel Tower is located in France, we know that Paris is the capital of France."
-        }, {
-            "references": "- The USA, located in the beautiful land of North America \n- Brazil is located in South America and has beautiful jungles \n- Canada and Mexico border the US in north america",
-            "question": "what are all three countries in north america?",
-            "answer": "USA, Canada, Mexico. The references tell us that the USA is located in North America and that Canada and Mexico are also in North America."
-        }, {
-            "references": "- Japan made 5.118 trillion USD in 2019 \n- pokemon is a popular video game that originates from japan \n- japan has a long rich history with culture and art \n- Japan is a global economic power",
-            "question": "what is the gdp of japan in 2022?",
-            "answer": "invalid question. We don't have enough information as references do not mention the gdp in 2022."
-        }]
 
         for _idx, query in enumerate(queries):
             query_time = query_times[_idx]
             retrieval_results = batch_retrieval_results[_idx]
 
             user_message = ""
-
-            for ex in few_shot_example:
-                user_message += f"""
-                Example:
-                    References \n{ex['references']}
-                    Using only the references listed above, answer the following question: \n
-                    Question: {ex['question']}
-                    Answer: {ex['answer']}\n
-                """
             references = ""
             
             if len(retrieval_results) > 0:
@@ -370,9 +369,9 @@ class RAGModel:
             references = references[:MAX_CONTEXT_REFERENCES_LENGTH]
             # Limit the length of references to fit the model's input size.
 
-            user_message += f"\n------\n\nUsing only the references listed below, answer the following question: \n"
             user_message += f"{references}\n------\n\n"
             user_message 
+            user_message += f"Using only the references listed above, answer the following question: \n"
             user_message += f"Current Time: {query_time}\n"
             user_message += f"Question: {query}\n"
 

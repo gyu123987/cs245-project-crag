@@ -83,7 +83,17 @@ if __name__ == "__main__":
                                  "rag_baseline_few",
                                  "rag_baseline_dynamic_sentence",
                                  "rag_baseline_0_COT",
-                                 "rag_baseline_1_COT"
+                                 "rag_baseline_1_COT",
+                                 "rag_baseline_few_COT",
+                                 "rag_baseline_knn_cosine",
+                                 "rag_baseline_knn_euclidean",
+                                 "rag_baseline_knn_manhattan",
+                                 "rag_baseline_context_5",
+                                 "rag_baseline_context_10",
+                                 "rag_baseline_context_30",
+                                 "rag_baseline_rerank_BERT",
+                                 "rag_baseline_filter",
+                                 "rag_baseline_summarize"
                                  # add your model here
                                  ],
                         )

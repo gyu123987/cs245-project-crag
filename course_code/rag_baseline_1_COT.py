@@ -343,7 +343,7 @@ class RAGModel:
 
             user_message = f"""
             Example:
-                # References: \n{one_shot_example['references']}
+                References: \n{one_shot_example['references']}
                 Using only the references listed above, answer the following question: \n
                 Question: {one_shot_example['question']}
                 Answer: {one_shot_example['answer']}
@@ -359,9 +359,9 @@ class RAGModel:
             references = references[:MAX_CONTEXT_REFERENCES_LENGTH]
             # Limit the length of references to fit the model's input size.
 
+            user_message += f"\n------\n\nUsing only the references listed below, answer the following question: \n"
             user_message += f"{references}\n------\n\n"
-            user_message 
-            user_message += f"Using only the references listed above, answer the following question: \n"
+            user_message
             user_message += f"Current Time: {query_time}\n"
             user_message += f"Question: {query}\n"
 
