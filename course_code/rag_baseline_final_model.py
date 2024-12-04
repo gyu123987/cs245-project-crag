@@ -9,7 +9,9 @@ import vllm
 from blingfire import text_to_sentences_and_offsets
 from bs4 import BeautifulSoup
 from sentence_transformers import SentenceTransformer
-from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+from sklearn.neighbors import NearestNeighbors
+
 
 from openai import OpenAI
 
@@ -17,12 +19,13 @@ from tqdm import tqdm
 
 #### CONFIG PARAMETERS ---
 
+TOTAL_CHUNKS_TO_RERANK = 50
 # Define the number of context sentences to consider for generating an answer.
-NUM_CONTEXT_SENTENCES = 20
+NUM_CONTEXT_SENTENCES = 15
 # Set the maximum length for each context sentence (in characters).
-MAX_CONTEXT_SENTENCE_LENGTH = 1500
+MAX_CONTEXT_SENTENCE_LENGTH = 1000
 # Set the maximum context references length (in characters).
-MAX_CONTEXT_REFERENCES_LENGTH = 4500
+MAX_CONTEXT_REFERENCES_LENGTH = 4000
 
 # Batch size you wish the evaluators will use to call the `batch_generate_answer` function
 AICROWD_SUBMISSION_BATCH_SIZE = 1 # TUNE THIS VARIABLE depending on the number of GPUs you are requesting and the size of your model.
@@ -67,20 +70,12 @@ class ChunkExtractor:
 
         # Initialize a list to store sentences
         chunks = []
-        current_chunk = ""
 
         # Iterate through the list of offsets and extract sentences
         for start, end in offsets:
-            sentence = text[start:end]
-
-            if len(current_chunk) + len(sentence) <= MAX_CONTEXT_SENTENCE_LENGTH:
-                current_chunk += " " + sentence
-            else:
-                chunks.append(current_chunk.strip())
-                current_chunk = sentence
-
-        if current_chunk:
-            chunks.append(current_chunk.strip())
+            # Extract the sentence and limit its length
+            sentence = text[start:end][:MAX_CONTEXT_SENTENCE_LENGTH]
+            chunks.append(sentence)
 
         return interaction_id, chunks
 
@@ -152,22 +147,36 @@ class RAGModel:
     def __init__(self, llm_name="meta-llama/Llama-3.2-3B-Instruct", is_server=False, vllm_server=None):
         self.initialize_models(llm_name, is_server, vllm_server)
         self.chunk_extractor = ChunkExtractor()
-        self.summarizer = pipeline("summarization", model="google/pegasus-large", device="cuda")
+        self.reranker_tokenizer = AutoTokenizer.from_pretrained("cross-encoder/ms-marco-MiniLM-L-12-v2")
+        self.reranker_model = AutoModelForSequenceClassification.from_pretrained("cross-encoder/ms-marco-MiniLM-L-12-v2")
+        self.filter_model = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", device="cuda")
+
     
-    def summarize_context(self, query, chunks):
-        """
-        Summarizes the retrieved chunks to focus on the most critical information.
-        """
-        context = """
-        Artificial intelligence is transforming various industries, including healthcare, by providing tools for early diagnosis, personalized medicine, and efficient administrative workflows. 
-        AI applications in healthcare also include drug discovery, medical imaging, and virtual health assistants. Challenges like data privacy and ethical concerns remain significant.
-        """
-
-        context = "\n".join(chunks)
-        query_aware_input = f"Focus on answering the query: {query} Context: {context}"[:1024]
-        summary = self.summarizer(query_aware_input, max_length=100, min_length=30, do_sample=False)
-
-        return [summary[0]['summary_text']]
+    def filter_irrelevant_chunks(self, query, chunks):
+        if len(chunks) == 0:
+            return []
+        relevant_chunks = []
+        for chunk in chunks:
+            try:
+                result = self.filter_model(chunk, candidate_labels=["relevant", "irrelevant"], hypothesis_template=f"This text is {{}} to the query: {query}"
+    )
+                if result["labels"][0] == "relevant" and result["scores"][0] > 0.7:
+                    relevant_chunks.append(chunk)
+            except ValueError as e:
+                continue
+        return relevant_chunks
+    
+    def rerank_with_bert(self, query, passages):
+        scores = []
+        for passage in passages:
+            inputs = self.reranker_tokenizer.encode_plus(
+                query, passage, return_tensors="pt", max_length=512, truncation=True
+            )
+            outputs = self.reranker_model(**inputs)
+            scores.append(outputs.logits[0].item())
+        
+        ranked_indices = np.argsort(scores)[::-1]
+        return [passages[idx] for idx in ranked_indices]
 
     def initialize_models(self, llm_name, is_server, vllm_server):
         self.llm_name = llm_name
@@ -298,19 +307,22 @@ class RAGModel:
             relevant_chunks = chunks[relevant_chunks_mask]
             relevant_chunks_embeddings = chunk_embeddings[relevant_chunks_mask]
 
-            # Calculate cosine similarity between query and chunk embeddings,
-            cosine_scores = (relevant_chunks_embeddings * query_embedding).sum(1)
+            # Calculate cosine similarity using KNN
+            knn_model = NearestNeighbors(n_neighbors=min(TOTAL_CHUNKS_TO_RERANK, len(relevant_chunks_embeddings)), metric="cosine")
+            knn_model.fit(relevant_chunks_embeddings)
+            distances, indices = knn_model.kneighbors(query_embedding.reshape(1, -1))
 
             # and retrieve top-N results.
-            retrieval_results = relevant_chunks[
-                (-cosine_scores).argsort()[:NUM_CONTEXT_SENTENCES]
-            ]
+            top_chunks = relevant_chunks[indices.flatten()]
 
-            summarized_results = self.summarize_context(query, retrieval_results)
+            reranked_chunks = self.rerank_with_bert(query, top_chunks)
+            retrieval_results = reranked_chunks[:NUM_CONTEXT_SENTENCES]
+            retrieval_results = self.filter_irrelevant_chunks(query, retrieval_results)
+
 
             # You might also choose to skip the steps above and 
             # use a vectorDB directly.
-            batch_retrieval_results.append(summarized_results)
+            batch_retrieval_results.append(retrieval_results)
             
         # Prepare formatted prompts from the LLM        
         formatted_prompts = self.format_prompts(queries, query_times, batch_retrieval_results)
@@ -325,7 +337,7 @@ class RAGModel:
                 top_p=0.9,  # Float that controls the cumulative probability of the top tokens to consider.
                 temperature=0.1,  # randomness of the sampling
                 # skip_special_tokens=True,  # Whether to skip special tokens in the output.
-                max_tokens=50,  # Maximum number of tokens to generate per output sequence.
+                max_tokens=75,  # Maximum number of tokens to generate per output sequence.
             )
             answers = [response.choices[0].message.content]
         else:
@@ -336,7 +348,7 @@ class RAGModel:
                     top_p=0.9,  # Float that controls the cumulative probability of the top tokens to consider.
                     temperature=0.1,  # randomness of the sampling
                     skip_special_tokens=True,  # Whether to skip special tokens in the output.
-                    max_tokens=50,  # Maximum number of tokens to generate per output sequence.
+                    max_tokens=75,  # Maximum number of tokens to generate per output sequence.
                 ),
                 use_tqdm=False
             )
@@ -355,14 +367,26 @@ class RAGModel:
         - query_times (List[str]): A list of query_time strings corresponding to each query.
         - batch_retrieval_results (List[str])
         """        
-        system_prompt = "You are provided with a question and various references. Your task is to answer the question succinctly, using the fewest words possible. If the references do not contain the necessary information to answer the question, respond with 'I don't know'. There is no need to explain the reasoning behind your answers."
+        system_prompt = "You are provided with a question and various references. If the references do not contain the necessary information to answer the question, respond with 'I don't know'. You are an expert on answering questions about the subject. Always explain your reasoning step-by-step, provide your final answer at the start."
         formatted_prompts = []
+
+        one_shot_example = {
+            "references": "- Paris is the capital of the country with the Eiffel Tower. \n- European art and culture has had a long history from France, Italy, and Spain.\n- The Eiffel tower is located in France",
+            "question": "what is the capital of france?",
+            "answer": "Paris. Paris is the capital of France. We know this because Paris is the capital of the country with the Eiffel Tower, and since the Eiffel Tower is located in France, we know that Paris is the capital of France."
+        }
 
         for _idx, query in enumerate(queries):
             query_time = query_times[_idx]
             retrieval_results = batch_retrieval_results[_idx]
 
-            user_message = ""
+            user_message = f"""
+            Example:
+                References: \n{one_shot_example['references']}
+                Using only the references listed above, answer the following question: \n
+                Question: {one_shot_example['question']}
+                Answer: {one_shot_example['answer']}
+            """
             references = ""
             
             if len(retrieval_results) > 0:
@@ -374,9 +398,9 @@ class RAGModel:
             references = references[:MAX_CONTEXT_REFERENCES_LENGTH]
             # Limit the length of references to fit the model's input size.
 
+            user_message += f"\n------\n\nUsing only the references listed below, answer the following question: \n"
             user_message += f"{references}\n------\n\n"
-            user_message 
-            user_message += f"Using only the references listed above, answer the following question: \n"
+            user_message
             user_message += f"Current Time: {query_time}\n"
             user_message += f"Question: {query}\n"
 

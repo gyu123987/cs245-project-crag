@@ -93,7 +93,8 @@ if __name__ == "__main__":
                                  "rag_baseline_context_30",
                                  "rag_baseline_rerank_BERT",
                                  "rag_baseline_filter",
-                                 "rag_baseline_summarize"
+                                 "rag_baseline_summarize",
+                                 "rag_baseline_final_model",
                                  # add your model here
                                  ],
                         )

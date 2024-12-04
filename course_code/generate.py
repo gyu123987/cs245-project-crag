@@ -107,7 +107,8 @@ if __name__ == "__main__":
                                  "rag_baseline_context_30",
                                  "rag_baseline_rerank_BERT",
                                  "rag_baseline_filter",
-                                 "rag_baseline_summarize"
+                                 "rag_baseline_summarize",
+                                 "rag_baseline_final_model"
                                  # add your model here
                                  ],
                         )
@@ -190,6 +191,9 @@ if __name__ == "__main__":
         model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
     elif model_name == "rag_baseline_summarize":
         from rag_baseline_summarize import RAGModel
+        model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
+    elif model_name == "rag_baseline_final_model":
+        from rag_baseline_final_model import RAGModel
         model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
     
 
