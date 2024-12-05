@@ -2,8 +2,6 @@
 __pycache__
 api_responses
 /data
-output/data/**/llm_evaluation_logs.json
-output/data/**/predictions.json
 
 
 # Python

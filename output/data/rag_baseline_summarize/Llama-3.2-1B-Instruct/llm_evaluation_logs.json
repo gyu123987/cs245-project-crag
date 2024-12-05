@@ -1,0 +1,1676 @@
+[
+    {
+        "query": "what are the countries that are located in southern africa.",
+        "ground_truth": "angola, botswana, the comoros, eswatini, lesotho, madagascar, malawi, mauritius, mozambique, namibia, south africa, zambia, and zimbabwe.",
+        "prediction": "- Southern African Countries: \n  - Angola\n  - Botswana\n  - Burundi\n  - Comoros\n  - Eritrea\n  - Ethiopia\n  - Kenya\n  - Lesotho\n  - Madagascar",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who has won the f1 drivers' championship at least five times?",
+        "ground_truth": "michael schumacher, lewis hamilton, and juan manuel fangio have all won the f1 drivers' championship at least five times.",
+        "prediction": "Lewis Hamilton",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what were tesla's quarerly reported earnings per share for the fiscal year 2022?",
+        "ground_truth": "q1: $0.95, q2: $0.76, q3: $0.95, q4: $1.19",
+        "prediction": "$2.54",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what album did the killers release in 2004, which included the songs \"mr. brightside\" and \"jenny was a friend of mine\"?",
+        "ground_truth": "the killers released the album \"hot fuss\" in 2004, which included the songs \"mr. brightside\" and \"jenny was a friend of mine\".",
+        "prediction": "The Killers released the album \"Sam's Town\" in 2006, which included the songs \"Mr. Brightside\" and \"Jenny Was a Friend of Mine\".",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was clermont foot's score last week?",
+        "ground_truth": "2",
+        "prediction": "Clermont Foot 2-1 Le Havre",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "where did yakult originate?",
+        "ground_truth": "japan",
+        "prediction": "Yakult originated in Japan.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how do the historical market capitalizations of coca-cola and pepsico  compare over the past decade?",
+        "ground_truth": "over the past decade, coca-cola has generally maintained a slightly higher market capitalization compared to pepsico.",
+        "prediction": "Coca Cola Co: $274.8B\nPepsico Inc.: $245.8B",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which sport is the most watched in the us, football or basketball?",
+        "ground_truth": "football",
+        "prediction": "Football is the most watched sport in the US.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "is eli lilly and company's stock price up from its yearly open?",
+        "ground_truth": "yes, eli lilly and company is currently trading around $769 - higher than its yearly opening price of $592.72.",
+        "prediction": "No",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how much do i pay in interest this month on a $2,000 credit card balance that has a simple annual interest rate is 14.99% per annum?",
+        "ground_truth": "$24.98",
+        "prediction": "$14.20",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the telephone area codes for the city of boise, idaho?",
+        "ground_truth": "208, 986",
+        "prediction": "208",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "can you tell me where kanye west is originally from?",
+        "ground_truth": "us",
+        "prediction": "Atlanta, Georgia, United States",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is treasury yield?",
+        "ground_truth": "treasury yield is the effective annual interest rate that the u.s. government pays on one of its debt obligations, expressed as a percentage.",
+        "prediction": "Treasury yield refers to the interest rate at which the U.S. government pays back money it borrows to raise capital through selling Treasury bonds.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which five states have successfully implemented universal healthcare program for all their residents?",
+        "ground_truth": "invalid question",
+        "prediction": "None of the states mentioned have successfully implemented a universal healthcare program for all their residents.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the outcome of sheffield utd's most recent match in eng-premier league?",
+        "ground_truth": "d",
+        "prediction": "Sheffield United was relegated from Premier League after Willian Jose's strike.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was rmco's open price this past friday?",
+        "ground_truth": "$1.24",
+        "prediction": "$1.2055",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many total games did utah jazz win during 2021?",
+        "ground_truth": "84",
+        "prediction": "5",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what nfl teams have never made the super bowl?",
+        "ground_truth": "browns, lions, jaguars, texans",
+        "prediction": "- Minnesota Vikings\n- Buffalo Bills\n- Cincinnati Bengals\n- Carolina Panthers\n- Atlanta Falcons\n- Los Angeles Chargers\n- Tennessee Titans\n- Arizona Cardinals\n- Cleveland Browns\n- Detroit Lions\n- Houston Texans\n- Jacksonville Jaguars",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what's the name of gordon ramsay's restaurant in at caesars?",
+        "ground_truth": "gordon ramsay hell\u2019s kitchen",
+        "prediction": "Gordon Ramsay Pub & Grill - Caesars Atlantic City",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "when was the birth of michael bay?",
+        "ground_truth": "1965-02-17",
+        "prediction": "February 17, 1965",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "list the members of paramore",
+        "ground_truth": "singer hayley williams, drummer zac farro, and guitarist taylor york.",
+        "prediction": "Hayley Williams, Zac Farro, Taylor York",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what album did toby keith release in 1997, which included the songs \"dream walkin'\" and \"tired\"?",
+        "ground_truth": "toby keith released the album \"dream walkin'\" in 1997, which included the songs \"dream walkin'\" and \"tired\".",
+        "prediction": "Toby Keith's Biggest Hits album.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who directed the original the italian job?",
+        "ground_truth": "peter collinson",
+        "prediction": "F.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which player has the most consecutive stolen bases in mlb history without being caught since 1980?",
+        "ground_truth": "vince coleman has the most consecutive stolen bases in mlb history without being caught, with 50 stolen bases.",
+        "prediction": "Rickey Henderson",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how much does a super bowl ad cost?",
+        "ground_truth": "~$7 million for 30 seconds of ad time.",
+        "prediction": "$1.15 million",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many total albums harry styles release as a solo artist",
+        "ground_truth": "3",
+        "prediction": "7",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which five states had successfully implemented an hourly minimum wage of $18 or higher in 2023?",
+        "ground_truth": "invalid question",
+        "prediction": "None of the states mentioned in the reference have successfully implemented an hourly minimum wage of $18 or higher in 2023.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what album did kings of leon release in 2013, which included the songs \"wait for me\" and \"family tree\"?",
+        "ground_truth": "kings of leon released the album \"mechanical bull\" in 2013, which included the songs \"wait for me\" and \"family tree\".",
+        "prediction": "Kings Of Leon Mechanical Bull Full Album LEAKED [www.mp3zer.com]",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the name of the movie that has been honored with the most academy awards?",
+        "ground_truth": "the lord of the rings: the return of the king",
+        "prediction": "Sunrise",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the final win-loss result of c\u00e1diz's most recent match in esp-la liga?",
+        "ground_truth": "w",
+        "prediction": "2 - 0",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who has won more atp masters 1000 titles, novak djokovic or rafael nadal?",
+        "ground_truth": "novak djokovic has won more atp masters 1000 titles than rafael nadal, with 40 titles compared to nadal's 36.",
+        "prediction": "Rafael Nadal 11/24 0/0 0/0 0/0 (0.0)",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what album did garth brooks release in 1997, which included the songs \"in another's eyes\" and \"cowboy cadillac\"?",
+        "ground_truth": "garth brooks released the album \"sevens\" in 1997, which included the songs \"in another's eyes\" and \"cowboy cadillac\".",
+        "prediction": "Sevens",
+        "response": "Accuracy: True / False"
+    },
+    {
+        "query": "which artist holds the record for the most grammy awards, beyonc\u00e9 or adele?",
+        "ground_truth": "beyonc\u00e9, 32 grammy awards",
+        "prediction": "Beyonc\u00e9 holds the record for the most Grammy Awards.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many times has justin bieber won the american music award for artist of the year?",
+        "ground_truth": "2",
+        "prediction": "11",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how big is the biggest state in the us?",
+        "ground_truth": "the biggest state in the us, alaska, is about 665,384 square miles big.",
+        "prediction": "West Virginia",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what is my effective tax rate if i paid $14,625 in taxes with a $100,000 income?",
+        "ground_truth": "14.63%",
+        "prediction": "$14,625 / $100,000 = 0.14625 or 14.625%",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the 3 biggest lakes in new york?",
+        "ground_truth": "the 3 biggest lakes in new york are lake erie, lake ontario and lake champlain.",
+        "prediction": "Lake George, Lake Erie, and Lake Ontario",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which movie has a higher rotten tomatoes score, the dark knight or the shawshank redemption?",
+        "ground_truth": "the shawshank redemption",
+        "prediction": "The Dark Knight has a higher Rotten Tomatoes score.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what year did ben-hur win the most academy awards in a single year, including best picture, best director, and best actress?",
+        "ground_truth": "invalid question",
+        "prediction": "1960",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many grammys has beyonc\u00e9 won throughout her career?",
+        "ground_truth": "beyonc\u00e9 has won a total of 32 grammy awards.",
+        "prediction": "Four",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what are the names of the albums that machine gun kelly has released?",
+        "ground_truth": "lace up, general admission, bloom, hotel diablo, tickets to my downfall, and mainstream sellout",
+        "prediction": "Lace Up, General Admission, Bloom, Hotel Diablo, Tickets to My Downfall, Mainstream, Sellout, Half Naked & Almost Famous, Binge, Black Flag, Singles, \"Wild Boy\", \"Invincible\", \"Hold On (",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what's the name of the movie that received the oscar for the best documentary feature film in 2001?",
+        "ground_truth": "into the arms of strangers: stories of the kindertransport",
+        "prediction": "Hoop Dreams",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who are the members of the band imagine dragons?",
+        "ground_truth": "the members of imagine dragons are dan reynolds, wayne sermon, ben mckee and daniel platzman.",
+        "prediction": "They are Andrew Beck, Dave Lemke, and Aurora Florence.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what movie received the best animated feature film award at the oscars in 2007?",
+        "ground_truth": "happy feet",
+        "prediction": "Shrek",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "are tinos and karpathos in the same time zone in winter?",
+        "ground_truth": "yes",
+        "prediction": "No, they are not in the same time zone in winter.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what professional won the best actor oscar in 2007?",
+        "ground_truth": "forest whitaker",
+        "prediction": "Daniel Day-Lewis",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what company in the dow jones is the worst performer today?",
+        "ground_truth": "walgreens boots alliance",
+        "prediction": "Chevron (CVX)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which type of cheese is higher in calcium content, cheddar or mozzarella?",
+        "ground_truth": "cheddar",
+        "prediction": "Mozzarella cheese is higher in calcium content.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who were the lead singers on the album \"dark side of the moon\" by pink floyd?",
+        "ground_truth": "the lead singers on the album \"dark side of the moon\" by pink floyd were roger waters and david gilmour.",
+        "prediction": "Kim Gordon",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what's the closing price of voyager therapeutics when it closed higher last time?",
+        "ground_truth": "$7.71",
+        "prediction": "Voyager Therapeutics Inc Stock Price Forecast for 2024 April 2024 Open: 7.928 Close: 8.505 Min: 7.928 Max: 8.505 Change: 6.77 %",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the title of the movie that holds the record for the most academy award wins?",
+        "ground_truth": "titanic, ben-hur, the lord of the rings: the return of the king",
+        "prediction": "Roma",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which company have larger market cap, hri or imppp?",
+        "ground_truth": "hri",
+        "prediction": "HRI (Hilton Worldwide Holdings)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many cups liquid is in a quart",
+        "ground_truth": "4",
+        "prediction": "1/4 quart",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "give at least 3 etf providers that has over 100 funds",
+        "ground_truth": "3 etf providers that has over 100 funds are blackrock, invesco, and global x",
+        "prediction": "- iShares: 2,659 funds\n- Vanguard: 2,361 funds\n- SPDR: 1,221 funds\n- Invesco: 454 funds\n- Charles Schwab: 320 funds",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what is the highest-grossing r-rated movie?",
+        "ground_truth": "joker.",
+        "prediction": "The Passion of the Christ (2004)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what's the current status of manchester city's game today?",
+        "ground_truth": "invalid question",
+        "prediction": "Manchester City 3 - 1 Manchester United",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who were the members of the band the beatles during the 1960s?",
+        "ground_truth": "the members of the beatles during the 1960s were john lennon, paul mccartney, george harrison, and ringo starr.",
+        "prediction": "John Lennon, Paul McCartney, Ringo Starr, George Harrison",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which cars movie had the higher box office gross worldwide, the first or the second?",
+        "ground_truth": "the second",
+        "prediction": "Cars (2006) had the higher box office gross worldwide.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what was the worldwide box office earnings for vampire diary?",
+        "ground_truth": "2000000",
+        "prediction": "$1,889,403",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is working capital?",
+        "ground_truth": "working capital, also known as net working capital (nwc), is the difference between a company\u2019s current assets\u2014such as cash, accounts receivable/customers\u2019 unpaid bills, and inventories of raw materials and finished goods\u2014and its current liabilities, such as accounts payable and debts.",
+        "prediction": "Working Capital: The total current assets is considered as the Gross Working Capital.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what are the names of all the movies in the austin powers franchise?",
+        "ground_truth": "the names of the movies in the austin powers franchise are \"austin powers: international man of mystery\", \"austin powers: the spy who shagged me\", and \"austin powers in goldmember\".",
+        "prediction": "- Austin Powers, International Man of Mystery (1997)\n- Austin Powers in Goldmember (2002)\n- Austin Powers in The Spy Who Shagged Me (1999)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many acc teams made it to the 2023 ncaa men's basketball tournament?",
+        "ground_truth": "5",
+        "prediction": "Five",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who were the team that brest played with in their last game in fra-ligue 1?",
+        "ground_truth": "lens",
+        "prediction": "Brest played AS Monaco in their last game in French Ligue 1.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "in their final eng-premier league game, did fulham have the home advantage or did they have to play away from home?",
+        "ground_truth": "away",
+        "prediction": "They played away from home.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what kind of tigers are extinct?",
+        "ground_truth": "caspian, javan, and bali tigers.",
+        "prediction": "Three subspecies of tigers are now extinct.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "in the entirety of 2021, detroit pistons did win how many games?",
+        "ground_truth": "27",
+        "prediction": "2021-22 23 59 .280 104.8 112.5 14",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who has had more number one hits on the us billboard r&b/hip-hop songs chart, drake or kendrick lamar?",
+        "ground_truth": "drake has had more number one hits on the us billboard r&b/hip-hop songs chart than kendrick lamar.",
+        "prediction": "Drake",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what are the names of george and amal clooney\u2019s twins?",
+        "ground_truth": "ella and alexander clooney",
+        "prediction": "Alexander and Ella.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which high school musical movie had the most songs?",
+        "ground_truth": "high school musical 3 has the most songs with 11.",
+        "prediction": "High School Musical 3: Senior Year",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the least populated continent?",
+        "ground_truth": "antarctica",
+        "prediction": "Oceania",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who was the ceo of apple in 2010?",
+        "ground_truth": "steve jobs",
+        "prediction": "Tim Cook",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which is a better investment, gold or silver, when considering long-term return?",
+        "ground_truth": "gold",
+        "prediction": "Gold is a better investment for long-term investors.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "in 51st grammy (2008), which artist took home the best new artist?",
+        "ground_truth": "adele",
+        "prediction": "Kanye West",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what city in california has the largest population?",
+        "ground_truth": "los angeles",
+        "prediction": "Los Angeles, CA Population of 3,999,742",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "in their last appearance in eng-premier league, what was the goal count for brentford?",
+        "ground_truth": "1",
+        "prediction": "6",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "during the 2022-12 season, did  chicago bulls score more total points in games than milwaukee bucks?",
+        "ground_truth": "yes",
+        "prediction": "Yes.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what are the names of kris jenner's children?",
+        "ground_truth": "kourtney kardashian barker, kim kardashian, khlo\u00e9 kardashian, rob kardashian, kendall jenner, and kylie jenner",
+        "prediction": "Kris Jenner has 4 children: Kourtney, Kim, Khlo\u00e9, and Rob.",
+        "response": "Accuracy: True / False"
+    },
+    {
+        "query": "how many hardware units has nintendo sold?",
+        "ground_truth": "863.07 million",
+        "prediction": "139.36 million",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the overall worldwide box office revenue for the deep blue sea?",
+        "ground_truth": "1126525",
+        "prediction": "$165,048,228",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what country are pandas native to?",
+        "ground_truth": "the panda is a bear species endemic to china.",
+        "prediction": "No European observed a live giant panda in the wild until the Walter Sttzner expedition of 1913\u201315, although Armand David, a Vincentian missionary, discovered some panda furs in 1869.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what was the location where vincent van gogh painted number 17a?",
+        "ground_truth": "invalid question",
+        "prediction": "Nuenen, North Brabant, Netherlands.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who were the first members of the band santana?",
+        "ground_truth": "the first members of santana were carlos santana, sergio \"gus\" rodriguez, danny haro, and michael carabello.",
+        "prediction": "David Brown and Carlos Santana.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who is the head coach of san jose's nhl team?",
+        "ground_truth": "david quinn is the head coach for the san jose sharks.",
+        "prediction": "Bob Boughner",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which film is longer, knocked up or superbad?",
+        "ground_truth": "knocked up",
+        "prediction": "Knocked Up is longer.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "can you list the movies that tom hanks has academy awards nominations as a leading role?",
+        "ground_truth": "cast away, and saving private ryan, forrest gump and philadelphia.",
+        "prediction": "- Philadelphia (1994)\n- Forrest Gump (1995)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the total number of films directed by steven spielberg?",
+        "ground_truth": "34 films",
+        "prediction": "73",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which movie has a higher number of oscar nominations, 12 angry men or schindler's list?",
+        "ground_truth": "schindler's list has a higher number of oscar nominations, with 12 nominations, while 12 angry men has 3 nominations.",
+        "prediction": "12 Angry Men",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who are the members of the band the 1975?",
+        "ground_truth": "the members of the 1975 are matty healy, adam hann, ross macdonald, and george daniel.",
+        "prediction": "Ross MacDonald, Adam Hann, Matty Healy, and George Daniel.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which university did natalie portman attend?",
+        "ground_truth": "harvard university",
+        "prediction": "# References \n- Natalie Portman: Harvard University and the Hebrew University of Jerusalem \n\n# Answer\nNatalie Portman attended Harvard University and the Hebrew University of Jerusalem.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the first movie to feature a person who can enter and manipulate people's dreams?",
+        "ground_truth": "the first movie to feature a person who can enter and manipulate people's dreams was \"dreamscape\" in 1984, which starred dennis quaid. a man is able to enter dreams and manipulate them is recruited to join the government to help prevent nuclear war.",
+        "prediction": "Inception.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what album did evanescence release in 2006, which included the songs \"call me when you're sober\" and \"lose control\"?",
+        "ground_truth": "evanescence released the album \"the open door\" in 2006, which included the songs \"call me when you're sober\" and \"lose control\".",
+        "prediction": "Synthesis",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many fast & furious movies are there?",
+        "ground_truth": "10 movies",
+        "prediction": "8",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who are the original band members of pink floyd?",
+        "ground_truth": "the original band was made up of roger \"syd\" barrett, roger waters, david gilmour, nick mason, and richard wright.",
+        "prediction": "Official members: Roger Waters, David Gilmour, Richard Wright, Nick Mason",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how much did the more popular wholesale store make in 2020?",
+        "ground_truth": "costco wholesale had a 2020 revenue of $172.92 billion.",
+        "prediction": "$673.25",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the different product families from nvidia?",
+        "ground_truth": "geforce, nvidia rtx, nforce, tesla, nvidia bluefield",
+        "prediction": "GeForce, Quadro.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which movie has the highest box office in 2023?",
+        "ground_truth": "the movie that has the highest box office in 2023 was barbie.",
+        "prediction": "$8 billion",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what total points were scored by orlando magic in 2022-01?",
+        "ground_truth": "1569",
+        "prediction": "22",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which awards has beyonce won this year?",
+        "ground_truth": "glaad media award - special award and the r&b tour of the year award by pollstar awards",
+        "prediction": "Beyonc\u00e9 won Grammys for best traditional R&B performance and record of the year.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which dow jones companies have been able to consistently report a sales growth rate of 50% or higher without investing in research and development or expanding their product lines?",
+        "ground_truth": "invalid question",
+        "prediction": "None of the Dow Jones companies mentioned in the references have consistently reported a sales growth rate of 50% or higher without investing in research and development or expanding their product lines.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which of them started their career earlier, the offspring or fall out boy?",
+        "ground_truth": "the offspring has started their career earlier.",
+        "prediction": "Fall Out Boy",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the name of the actor who won best actor in 2006?",
+        "ground_truth": "philip seymour hoffman",
+        "prediction": "Forest Whitaker",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which movie won the oscar best visual effects in 2018?",
+        "ground_truth": "blade runner 2049",
+        "prediction": "2018",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who has been in the movie industry the longest, nicole kidman or meryl streep?",
+        "ground_truth": "meryl streep has been in the film industry for 49 years while nicole kidman has been in the industry for 41 years.",
+        "prediction": "Nicole Kidman or Meryl Streep",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who finished in second the year max verstappen won his first championship?",
+        "ground_truth": "lewis hamilton",
+        "prediction": "Max Verstappen.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "when was liam kyle sullivan born?",
+        "ground_truth": "1973-07-17",
+        "prediction": "July 17, 1973",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the initial release date of the book of manning?",
+        "ground_truth": "2013-09-24",
+        "prediction": "November 2018",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "in which year was cosmopolitan (magazine) launched?",
+        "ground_truth": "1886",
+        "prediction": "Two years later Schlicht & Field\u2019s bankruptcy forced it to sell the magazine to Joseph Newton Hallock, who introduced book reviews and serialized fiction to its pages.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "in 2021, how many victories did minnesota timberwolves record?",
+        "ground_truth": "40",
+        "prediction": "21",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what movie received the best animated feature film award at the oscars in 2011?",
+        "ground_truth": "toy story 3",
+        "prediction": "Toy Story 3.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who are the owners of the nine mile point nuclear generating station?",
+        "ground_truth": "constellation energy, long island power authority",
+        "prediction": "Exelon Generation and lectricit\u00e9 de France have asked the New York Public Service Commission to approve the transfer of EDF's 49.99 percent ownership interest in Constellation Energy.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what's the name of rihanna's fashion brand?",
+        "ground_truth": "fenty",
+        "prediction": "Rihanna's luxury fashion brand is called Fenty.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what movie received the best animated feature film oscar in 2014?",
+        "ground_truth": "frozen",
+        "prediction": "Toy Story 3",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which film's visual effects stunned the academy, winning the best visual effects oscar in 2014?",
+        "ground_truth": "gravity",
+        "prediction": "Apple TV+",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which band sold more albums worldwide: the beatles or the rolling stones?",
+        "ground_truth": "the beatles are the top-selling band of all time, with 600 million record sales worldwide\u2014more than lapping the rolling stones",
+        "prediction": "The Beatles sold more albums worldwide.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which movie took home the best visual effects oscar in 2013?",
+        "ground_truth": "life of pi",
+        "prediction": "Philomena",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the names of the 3 main characters in top gun?",
+        "ground_truth": "the names of the 3 main characters in top gun are: pete \"maverick\" mitchell, charlie blackwood, and nick \"goose\" bradshaw.",
+        "prediction": "- Maverick \n- Goose \n- Iceman",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who are the members of the band mgmt?",
+        "ground_truth": "the members of mgmt are andrew vanwyngarden and ben goldwasser.",
+        "prediction": "- Andrew VanWyngarden (lead vocals, guitar, keyboards, drums)\n- Ben Goldwasser (keyboards, vocals, guitar)\n- Matthew Asti (bass, keyboards)\n- James Richardson (guitar, vocals)\n- Hank",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which year did netflix last raise their subscription prices?",
+        "ground_truth": "2023",
+        "prediction": "October 2022",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "name the last five albums by taylor swift.",
+        "ground_truth": "red (taylor's version), midnights, speak now (taylor's version),1989 (taylor's version),and the tortured poets department",
+        "prediction": "Ram",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what year did david cassidy release their hit song \"white horse\"?",
+        "ground_truth": "invalid question",
+        "prediction": "2007",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the average worldwide gross for pixar's movies in 2017?",
+        "ground_truth": "$623,373,426",
+        "prediction": "$383.9 million",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the total value of all hedge fund assets under management in 2021?",
+        "ground_truth": "the total value of all global hedge fund assets under management reached around $4.53 trillion in 2021.",
+        "prediction": "$1,144,317,200,000",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the first 3 largest continents in the world?",
+        "ground_truth": "asia, afrida, north america",
+        "prediction": "Asia, Africa, and North America.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who is the american singer-songwriter who has won 14 grammy awards and is known for her unique blend of country, pop, and rock music, including her hit songs \"you belong with me\" and \"we are never ever getting back together\"?",
+        "ground_truth": "taylor swift is the american singer-songwriter who has won 14 grammy awards and is known for her unique blend of country, pop, and rock music, including her hit songs \"you belong with me\" and \"we are never ever getting back together\", which have become chart-topping hits and solidified her status as a pop culture icon.",
+        "prediction": "Taylor Swift.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what is the recommended amount of protein you need in a day?",
+        "ground_truth": "the average adult needs a minimum of 0.8 grams of protein per kilogram of body weight per day.  however, your protein needs may increase if you are very active.",
+        "prediction": "0.8 grams of protein per kilogram of body weight or 0.36 grams per pound.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which company has a higher earnings per share, kla or netflix?",
+        "ground_truth": "as of the current financial data, kla has a higher earnings per share than netflix, with an earnings per share of $19.69 compared to twitter's $12.02.",
+        "prediction": "$2.89",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "does berskhire hathaway have a higher market cap than tesla?",
+        "ground_truth": "yes",
+        "prediction": "No",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which animated movie was recognized with the best feature film oscar in 2013, can you name it?",
+        "ground_truth": "brave",
+        "prediction": "Up (2009)",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who is the first actor to play superman?",
+        "ground_truth": "kirk alyn in 1948",
+        "prediction": "Kirk Alyn.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "in 2000, which rapper dropped \"the marshall mathers lp\"?",
+        "ground_truth": "the marshall mathers lp is the third studio album by the american rapper eminem",
+        "prediction": "Marshall Mathers",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what's the name of the dutch national anthem?",
+        "ground_truth": "wilhelmus van nassouwe",
+        "prediction": "Het Wilhelmus",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "as of now, what is the pe ratio of douyu international holdings limited ads?",
+        "ground_truth": "24.9",
+        "prediction": "11.87",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "can you tell me when westlife began their career in music?",
+        "ground_truth": "1998-07-03",
+        "prediction": "Westlife began their career in music in 1998.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who was the talented performer who received the best actor oscar in 2019?",
+        "ground_truth": "rami malek",
+        "prediction": "Joaquin Phoenix.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what movie received the best documentary feature accolade at the academy awards in 2009?",
+        "ground_truth": "man on wire",
+        "prediction": "2009 Oscar Nominations For Best Documentary",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how much is white truffle, as the most expensive food in the world?",
+        "ground_truth": "invalid question",
+        "prediction": "$200,000",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who was the villain of kung fu panda movie?",
+        "ground_truth": "tai lung",
+        "prediction": "Tai Lung is the main antagonist of Kung Fu Panda.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the global box office revenue for caught up?",
+        "ground_truth": "6754484",
+        "prediction": "$500M",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "if a company's shareholder equity is $76 million and they have $79 million in liabilities, what is their debt-to-equity ratio?",
+        "ground_truth": "1.04",
+        "prediction": "$76 million (shareholder equity) - $79 million (liabilities) = -$3 million (debt)\n\n$3 million / $76 million = 0.0397 (debt-to-equity ratio)",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who are all the members of rolling stones?",
+        "ground_truth": "mick jagger, keith richards, ronnie wood, and charlie watts.",
+        "prediction": "Andy Green",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the ratio of siri's stock price to its earnings?",
+        "ground_truth": "14.03",
+        "prediction": "14.3x",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who is the highest grossing star based on the domestic office from 2021 to 2023?",
+        "ground_truth": "the highest grossing stars from 2021 to 2023 based on the domestic box office is margot robbie.",
+        "prediction": "Anya Taylor-Joy",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what album did outkast release in 2000, which included the songs \"ms. jackson\" and \"so fresh, so clean\"?",
+        "ground_truth": "outkast released the album \"stankonia\" in 2000, which included the songs \"ms. jackson\" and \"so fresh, so clean\".",
+        "prediction": "Stankonia",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "can you list idris elba's kids?",
+        "ground_truth": "idris elba has 2 kids: isan and winston.",
+        "prediction": "Idris Elba has two children: \n1. Isan Elba (daughter) \n2. Hanne \"Kim\" Nrgaard (ex-wife)",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many grand slam titles has novak djokovic won?",
+        "ground_truth": "novak djokovic has won 24 grand slam titles.",
+        "prediction": "24",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which team prevailed more in 2022: sacramento kings or orlando magic?",
+        "ground_truth": "sacramento kings",
+        "prediction": "Orlando Magic 3-5 126 TF 3 FINAL/OT",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who is the oldest member of nickelback?",
+        "ground_truth": "the oldest member of nickelback is ryan peake.",
+        "prediction": "Brandon Kroeger",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which player has the most career assists in the wnba among players who have never won an assists title?",
+        "ground_truth": "diana taurasi has the most career assists in the wnba among players who have never won an assists title, with 2,151 assists.",
+        "prediction": "LeBron James",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what color was mr. incredibles suit at the beginning of the first incredibles movie?",
+        "ground_truth": "mr. incredible's blue supersuit is the first supersuit worn on-screen by mr. incredible.",
+        "prediction": "Blue.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the final tally of points for minnesota timberwolves in 2022-12, taking into account all games played during that month?",
+        "ground_truth": "1717",
+        "prediction": "47",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what school does lebron james's youngest son attend?",
+        "ground_truth": "sierra canyon high school",
+        "prediction": "Campbell Hall",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who are the members of the band kings of leon?",
+        "ground_truth": "the members of kings of leons are brothers caleb, nathan and jared followill and their cousin matthew followill.",
+        "prediction": "Three brothers: Caleb, Jared, Nathan.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what is the name of dwayne \"the rock\" johnson's upcoming movie?",
+        "ground_truth": "invalid question",
+        "prediction": "Red One",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who has had more number one hits on the us billboard rock songs chart, imagine dragons or twenty one pilots?",
+        "ground_truth": "imagine dragons have had more number one hits on the us billboard rock songs chart than twenty one pilots, with 5 number one hits compared to twenty one pilots' 4.",
+        "prediction": "Twenty One Pilots.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who has had more number one hits on the us billboard country airplay chart, carrie underwood or faith hill?",
+        "ground_truth": "carrie underwood has had more number one hits on the us billboard country airplay chart than faith hill, with 16 number one hits compared to faith's 9.",
+        "prediction": "Carrie Underwood 61, Faith Hill 61",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the state birds of maine, idaho, new mexico and california?",
+        "ground_truth": "the state bird of maine is the chickadee, idaho is the mountain bluebird, new mexico is the greater roadrunner, and california is the california quail",
+        "prediction": "- Maine: Bluebird\n- Idaho: Mountain Bluebird\n- New Mexico: Roadrunner\n- California: California Quail",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the opening stock price of sats on the tues of the past week?",
+        "ground_truth": "$13.33",
+        "prediction": "$0.00000050",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "frhc's current market cap.",
+        "ground_truth": "$4,647,450,878.49",
+        "prediction": "$10.86 Billion",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "did sean connery play the role of james bond in the 2006 movie \"casino royale\"?",
+        "ground_truth": "invalid question",
+        "prediction": "No, Sean Connery did not play James Bond in the 2006 movie \"Casino Royale\".",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what are the years that each charlie and the chocolate factory movie came out?",
+        "ground_truth": "the years that the movies in the charlie and the chocolate factory franchise were released are 1971, 2005, 2017, and 2023.",
+        "prediction": "- Charlie and the Chocolate Factory (2005) - 2005\n- Charlie and the Chocolate Factory (1971) - 1971",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what is the lynne naylor's birthday?",
+        "ground_truth": "1953-11-07",
+        "prediction": "July 7, 1953",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what is plato's theory of forms?",
+        "ground_truth": "plato's theory of forms suggests that the physical world is not as real or true as \"forms\". according to this theory, forms\u2014conventionally capitalized and also commonly translated as \"ideas\"\u2014are the non-physical, timeless, absolute, and unchangeable essences of all things, of which objects and matter in the physical world are merely imitations.",
+        "prediction": "Plato's theory of Forms.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many people live in the biggest city of russia?",
+        "ground_truth": "the largest city of russia, moscow, has a population of about 13,010,112 people.",
+        "prediction": "146,8 million",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many films are there in the \"fast & furious\" franchise?",
+        "ground_truth": "10 films",
+        "prediction": "1.1.1 The Fast and the Furious (2001)\n1.1.2 2 Fast 2 Furious (2003)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which movie has a longer runtime, the lord of the rings: the return of the king or the dark knight?",
+        "ground_truth": "the lord of the rings: the return of the king has a longer runtime, clocking in at 201 minutes, while the dark knight runs for 152 minutes.",
+        "prediction": "The Lord of the Rings: The Return of the King (3h 20m)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the company name of aldi derived from?",
+        "ground_truth": "a syllabic abbreviation for albrecht diskont",
+        "prediction": "Aldi Sd",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which company has a higher market capitalization, walmart or broadcom?",
+        "ground_truth": "as of the current market situation, broadcom has a higher market capitalization than walmart, with a market capitalization of $597.5 billion compared to walmart's $480.1 billion.",
+        "prediction": "Walmart has a higher market capitalization.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which film earned acclaim for its visual effects performance at the oscars in 2016?",
+        "ground_truth": "ex machina",
+        "prediction": "Game of Thrones",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "can you compare the market caps of muj and wsbc and tell me which company has a larger one?",
+        "ground_truth": "wsbc",
+        "prediction": "Johnson & Johnson Market Cap: 1,313,000,000\nTencent Holdings Market Cap: 1,030,000,000\nAlibaba Group Holding Market Cap (BABA): 2,354,000,000\n\nB",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which company has a higher price-to-book ratio, visa or mastercard?",
+        "ground_truth": "as of the current financial data, visa has a higher price-to-book ratio than mastercard, with a price-to-book ratio of 10.45 compared to mastercard's 8.89.",
+        "prediction": "Mastercard (MA) has a higher price-to-book ratio (63.0) compared to Visa (V).",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "tell me the most recent song or album by doris duke?",
+        "ground_truth": "i\u2019m a loser: the swamp dogg sessions... and more",
+        "prediction": "The Feeling Is Right by Doris Duke was published on 2018-07-30T16:30:42Z.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what movie received the best documentary feature accolade at the academy awards in 2016?",
+        "ground_truth": "amy",
+        "prediction": "Game of Thrones",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how much rings does steve kerr hold?",
+        "ground_truth": "kerr is a nine-time nba champion",
+        "prediction": "5",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which animated movie won the academy award for best animated feature film in 2012?",
+        "ground_truth": "rango",
+        "prediction": "Toy Story 3 (2010)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who are the founders of starbucks?",
+        "ground_truth": "jerry baldwin zev siegl gordon bowker",
+        "prediction": "Jerry Baldwin, Zev Siegl, and Gordon Bowker.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who was the coach of the team that won the stanley cup last season?",
+        "ground_truth": "bruce cassidy, who coaches the vegas golden knights, was the coach of the team that won the stanley cup last season.",
+        "prediction": "Colorado Avalanche",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many guitarists have been members of the band guns n' roses?",
+        "ground_truth": "guns n' roses has had a total of 12 guitarists as members throughout their history.",
+        "prediction": "3",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which years did fall out boy release albums?",
+        "ground_truth": "2003, 2005, 2007, 2008, 2013, 2015, 2018, and 2023",
+        "prediction": "Fall Out Boy released albums from 2003 to 2015.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which animated movie was honored with the academy award for best animated feature film in 2012?",
+        "ground_truth": "rango",
+        "prediction": "The answer is \"Br\u00fctal Legend\".",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the total points tally for indiana pacers in 2022-12, encompassing all games played during that month?",
+        "ground_truth": "1841",
+        "prediction": "25",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who are the owners of the vogtle electric generating plant?",
+        "ground_truth": "georgia power, opctooltip oglethorpe power corporation, meag, dalton utilities",
+        "prediction": "- Owners \n- Georgia Power (45.7%)\n- Oglethorpe Power Corporation (30%)\n- Municipal Electric Authority of Georgia (22.7%)\n- Dalton Utilities (1.6%)",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which actress won an academy award for her role in \"black swan\"?",
+        "ground_truth": "natalie portman",
+        "prediction": "Natalie Portman won the best actress Oscar for her role in \"Black Swan\".",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the date stan helsing was released for public view?",
+        "ground_truth": "2009-10-27",
+        "prediction": "March 19, 2009",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who had the most lines in all of the star wars movies?",
+        "ground_truth": "han solo has the most lines with 5,504 words across the 4 movies that he was in.",
+        "prediction": "C-3PO",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what is the largest reptile?",
+        "ground_truth": "saltwater crocodile",
+        "prediction": "The saltwater crocodile is the largest reptile.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what school did the 2016 heisman trophy winner play for?",
+        "ground_truth": "the 2016 heisman trophy winner, lamar jackson, played at louisville.",
+        "prediction": "Louisville.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what was the date virgin territory was released for public view?",
+        "ground_truth": "2007-12-17",
+        "prediction": "March 18, 2023",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "could you tell me which company has a higher market cap between hcvi and atak?",
+        "ground_truth": "hcvi",
+        "prediction": "HCVI has a market cap of $1,027.8, while ATak has a market cap of $1,801.9. ATak has a higher market cap.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which years did the boston red sox win the world series?",
+        "ground_truth": "1903, 1912, 1915, 1916, 1918, 2004, 2007, 2013, and 2018",
+        "prediction": "- 1915\n- 1918\n- 1967\n- 1975\n- 2004\n- 2007\n- 2013\n- 2018",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what newspaper is the sister publication of the new york times?",
+        "ground_truth": "the new york times international edition",
+        "prediction": "The Times in Print",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which artist was younger, alice cooper or nina simone?",
+        "ground_truth": "alice cooper",
+        "prediction": "Nina Simone was younger.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "at what location did the first lord of the rings movie started filming in?",
+        "ground_truth": "the lord of the rings move was filmed in new zealand.",
+        "prediction": "Matamata.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which movie was acclaimed for its visual effects at the oscars in 2001?",
+        "ground_truth": "gladiator",
+        "prediction": "None of the listed references mention the 2001 Oscars.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many gold medals has michelle kwan won in the olympic games?",
+        "ground_truth": "invalid question",
+        "prediction": "Five-time world champion figure skater and two-time Olympic medalist.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many awards has beyonc\u00e9 won throughout her career?",
+        "ground_truth": "beyonc\u00e9 has won a total of 614 awards throughout her career, including 32 grammy awards, 29 mtv video music awards, and 21 soul train music awards, among many others, making her one of the most awarded celebrities in history.",
+        "prediction": "29",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what was the first project that alexandre aja worked on as a director?",
+        "ground_truth": "over the rainbow",
+        "prediction": "The Hills Have Eyes",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many guitarists have been part of the band guns n' roses throughout its history?",
+        "ground_truth": "guns n' roses has had a total of 12 guitarists throughout its history.",
+        "prediction": "3",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the stock exchanges operated by nasdaq, inc.?",
+        "ground_truth": "stock exchanges owned and operated by nasdaq, inc are: nasdaq (new york), nasdaq copenhagen, nasdaq stockholm, nasdaq helsinki, nasdaq iceland, nasdaq tallinn, nasdaq riga, nasdaq vilnius, nasdaq philadelphia, nasdaq boston",
+        "prediction": "Nasdaq, Inc. operates the Nasdaq stock exchange.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who has won more mtv video music awards, lady gaga or katy perry?",
+        "ground_truth": "lady gaga has won more mtv video music awards than katy perry, with 18 wins compared to katy's 5.",
+        "prediction": "Lady Gaga has won more MTV Video Music Awards.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who has played drums for the red hot chili peppers?",
+        "ground_truth": "chad smith, jack irons, and cliff martinez",
+        "prediction": "Anthony Kiedis, Flea, Chad Smith, John Frusciante, and DeWayne McKnight have played drums for the Red Hot Chili Peppers.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which company in the russell 2000 index has the highest return on equity (roe)?",
+        "ground_truth": "the company with the highest roe in the russell 2000 index is cogent communications holdings, with an roe of 2,267%.",
+        "prediction": "IPLS 0.45%",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many successful bands was chris cornell in?",
+        "ground_truth": "3",
+        "prediction": "12",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what's the name of the actress who played the role of katniss in the movie \"the hunger games\"?",
+        "ground_truth": "the actress who played the role of katniss in the movie \"the hunger games\" is jennifer lawrence. katniss everdeen was the protagonist of the movie, which was released in  2012. lawrence's performance earned her a nomination for a academy award for best actress.",
+        "prediction": "Isabelle Fuhrman played the role of Katniss in \"The Hunger Games.\"",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what age did taylor swift release her first album?",
+        "ground_truth": "16 years old",
+        "prediction": "16",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which company has the highest revenue among automotive manufacturers?",
+        "ground_truth": "toyota motor corporation",
+        "prediction": "Volkswagen Group has the highest revenue among automotive manufacturers.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the names of the people taylor swift has publicly dated?",
+        "ground_truth": "joe jonas, lucas till, taylor lautner, john mayer, jake gyllenhaal, connor kennedy, harry styles, calvin harris, tom hiddleston, joe alwyn, matty healy, and currently travis kelce.",
+        "prediction": "- Joe Jonas\n- Taylor Lautner\n- Jake Gyllenhaal\n- John Mayer\n- Conor Kennedy\n- Harry Styles\n- Calvin Harris\n- Tom Hiddleston\n- Joe Alwyn",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the name of the high school in the movie \"mean girls\"?",
+        "ground_truth": "north shore high school",
+        "prediction": "The name of the high school in the movie \"Mean Girls\" is North Shore High School.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "can you tell me who founded waitrose?",
+        "ground_truth": "wallace waite arthur rose david taylor",
+        "prediction": "Wallace Waite, Arthur Rose, and David Taylor.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who are the original members of the band eagles?",
+        "ground_truth": "randy meisner, bernie leadon, don henley, and glenn frey",
+        "prediction": "Original members: Bernie Leadon, Randy Meisner, Joe Walsh, Glenn Frey",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how much has spotify's user base increased by since 2020 in north america?",
+        "ground_truth": "spotify's user base increased by 34 million since 2020 in north america.",
+        "prediction": "601 million",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the names of the sisters in hocus pocus?",
+        "ground_truth": "winifred, mary and sarah sanderson",
+        "prediction": "The names of the sisters in Hocus Pocus are Winifred, Mary, and Sarah Sanderson.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which athletes have won the boston marathon at least four times?",
+        "ground_truth": "robert kipkoech cheruiyot, g\u00e9rard c\u00f4t\u00e9, clarence demar, bill rodgers, catherine ndereba, marcel hug, jim knaub, franz nietlispach, ernst van dyk, candace cable-brookes, jean driscoll, tatyana mcfadden, louise sauvage, manuela sch\u00e4r, and wakako tsuchida  have all won the boston marathon at least four times.",
+        "prediction": "- Caffery (Can.) 2:29:23 1902 1906 Sammy Mellor 2:43:12 1903 John Lorden 2:41:29 1904 Michael Spring 2:38:",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the number of films that feature both sam hargrave and josh brolin played?",
+        "ground_truth": "2",
+        "prediction": "35",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what movie was the most profitable that bruce willis was in?",
+        "ground_truth": "the most profitable move bruce willis was in was the sixth sense.",
+        "prediction": "\"Armageddon\"",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many months did it take to release the first toy story movie?",
+        "ground_truth": "it took 4 years to make the first toy story film, making it 48 months to release the movie.",
+        "prediction": "1995",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what's the worldwide box office revenue for pirates of the caribbean: dead men tell no tales?",
+        "ground_truth": "795900000",
+        "prediction": "$795.9 million",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who were the stars of living in bondage: breaking free?",
+        "ground_truth": "ramsey nouah, kanayo o. kanayo, swanky j.k.a., kenneth okonkwo, enyinna nwigwe, shawn faqua, munachi abii, nancy isime, bob-manuel udokwu, ebele okaro-onyiuke, zulu adigwe, ndidi obi",
+        "prediction": "Ramsey Nouah",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the names of all the movies in the maze runner franchise?",
+        "ground_truth": "the names of the movies in the the maze runner franchise are \"the maze runner\", \"maze runner: the scorch trials\", and \"maze runner: the death cure\".",
+        "prediction": "The Maze Runner films are: \n1. Maze Runner (2014)\n2. Maze Runner: The Scorch Trials (2015)\n3. Maze Runner: The Death Cure (2018)",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how much does the largest bank in north america have in assets?",
+        "ground_truth": "jpmorgan chase, the largest bank in north america, has approximately $3.9 trillion in total assets.",
+        "prediction": "$2.61 trillion",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is capital gain?",
+        "ground_truth": "capital gain is an economic concept defined as the profit earned on the sale of an asset which has increased in value over the holding period.",
+        "prediction": "Capital gain.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the country of the winner of the 48th grammy award (2005) for best new artist?",
+        "ground_truth": "us",
+        "prediction": "United States",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "can you tell me who is the current usa today's sister company?",
+        "ground_truth": "usa today sports weekly",
+        "prediction": "Gannett Company",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what's the name of the movie that received the oscar for the best documentary feature film in 2000?",
+        "ground_truth": "one day in september",
+        "prediction": "Hoop Dreams",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "tell me latest three songs released by daniel hall",
+        "ground_truth": "the watchman, the fireman, corruption.",
+        "prediction": "On the Field of Dreams",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many litres are in 6 gallons?",
+        "ground_truth": "22.7 litres",
+        "prediction": "1.5850323",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the names of rihanna's albums in chronological order?",
+        "ground_truth": "music of the sun (2005), a girl like me (2006), good girl gone bad (2007), rated r (2009), loud (2010), talk that talk (2011), unapologetic (2012), and anti (2016)",
+        "prediction": "- 2005: Music of the Sun\n- 2006: A Girl Like Me\n- 2007: Good Girl Gone Bad\n- 2009: Rated R\n- 2010: Loud\n- 2012",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which bank in the us made the most last year on green debt?",
+        "ground_truth": "the us bank that made the most money underwriting green bonds is wells fargo, with over $107 million in fees from arrangin bonds and loans for the fossil fuel sector.",
+        "prediction": "BNP Paribas",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what actor plays themselves in the movie \"zombieland\"?",
+        "ground_truth": "bill murray.",
+        "prediction": "Zach Galifianakis",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who were the members of the band abba?",
+        "ground_truth": "the members of abba were agnetha f\u00e4ltskog, bj\u00f6rn ulvaeus, benny andersson, and anni-frid lyngstad.",
+        "prediction": "Agnetha F\u00e4ltskog, Bj\u00f6rn Ulvaeus, Benny Andersson, and Anni-Frid Lyngstad",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who was the second oldest member of the jackson 5?",
+        "ground_truth": "jackie jackson",
+        "prediction": "Marlon Jackson",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the date for the first release of the revenge of larry?",
+        "ground_truth": "1913",
+        "prediction": "August 10, 1984",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "in 2021, what was the most popular horror movie?",
+        "ground_truth": "one of the most popular horror movies in 2021 was a quiet place: part ii.",
+        "prediction": "The 50 Best Horror Movies Of The 21st Century by Ben Travis, Sophie Butcher, Nick de Semlyen, Chris Hewitt, Beth Webb, Alex Godfrey, Owen Williams | Published on 29 10 2021",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which players have won the nba finals mvp award at least three times?",
+        "ground_truth": "michael jordan, lebron james, magic johnson, shaquille o'neal, and tim duncan have all won the nba finals mvp award at least three times.",
+        "prediction": "Nikola Jokic, Stephen Curry, Giannis Antetokounmpo, LeBron James, Kawhi Leonard, and Kevin Durant have won the NBA Finals MVP award at least three times.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who are the top 3 richest people in the world?",
+        "ground_truth": "bernard arnault, jeff bezos, elon musk",
+        "prediction": "- Current Time: 03/10/2024, 21:35:45 PT\n- Top 3 richest people in the world: \n1. Bernard Arnault & family $211 billion\n2. Elon Musk $180 billion",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who had the highest net worth in 2020?",
+        "ground_truth": "jeff bezos",
+        "prediction": "Mark Zuckerberg",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which movie had the higher box office earnings, whiplash or the big lebowski?",
+        "ground_truth": "whiplash had a box office earnings, with a profit of $49 million, while the big lebowski earned $46.7 million.",
+        "prediction": "The Big Lebowski ($18,718,818)",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what percentage of israel adesanya's ufc fights have ended in a knockout?",
+        "ground_truth": "37.5%",
+        "prediction": "62.5%",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who directed the movie \"the shining\"?",
+        "ground_truth": "stanley kubrick",
+        "prediction": "Kubrick.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what teams are part of group e in the 2023 fifa women's world cup?",
+        "ground_truth": "netherlands, united states, portugal, vietnam",
+        "prediction": "Group E: Spain, Netherlands, England, Cameroon",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what are the names of the movies in the hunger games film series?",
+        "ground_truth": "the hunger games, the hunger games: catching fire, the hunger games: mockingjay \u2013 part 1, the hunger games: mockingjay \u2013 part 2, and the hunger games: the ballad of songbirds & snakes",
+        "prediction": "The Hunger Games film series consists of:\n\n1. The Hunger Games (2012)\n2. The Hunger Games: Catching Fire (2013)\n3. The Hunger Games: Mockingjay \u2013 Part 1 (2014)\n4. The",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many stock holdings in spy that has over 5% weightage",
+        "ground_truth": "there are 504 stocks in the spy fund but only two has over 5% weightage - msft and aapl",
+        "prediction": "21, 2023) Holding (Company) % SPY Portfolio Weight Apple ( AAPL ) 7.05%",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the current market value of camping world holdings's outstanding shares?",
+        "ground_truth": "$2,237,578,268.00",
+        "prediction": "84,538,038",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "is the price of meta stock higher or lower than it was at the yearly open?",
+        "ground_truth": "higher",
+        "prediction": "Lower.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what's the price-to-earnings ratio of bhp as of now?",
+        "ground_truth": "27.9",
+        "prediction": "19.57",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who has more titles, serena or venus?",
+        "ground_truth": "serena",
+        "prediction": "Serena Williams has 23 titles.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which team has had the longer championship drought, the dallas cowboys or san francisco 49ers?",
+        "ground_truth": "san francisco 49ers",
+        "prediction": "49ers 20\u201319\u20131",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many weeks are in a year?",
+        "ground_truth": "52 weeks",
+        "prediction": "52",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "what sport does pau gasol's brother play?",
+        "ground_truth": "basketball",
+        "prediction": "Pau Gasol's brother, Pau Gasol, plays basketball.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many times has tom hanks played himself in a movie?",
+        "ground_truth": "tom hanks has played himself in three films.",
+        "prediction": "80",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the first studio album from the group that michael jackson was in?",
+        "ground_truth": "diana ross presents the jackson 5",
+        "prediction": "The first studio album from the group that Michael Jackson was in was \"Diana Ross Presents the Jackson 5\" (1969).",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how many zip codes are there in montgomery, alabama?",
+        "ground_truth": "16",
+        "prediction": "33",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what album did olivia rodrigo release in 2021, which included the songs \"traitor\" and \"deja vu\"?",
+        "ground_truth": "olivia rodrigo released the album \"sour\" in 2021, which included the songs \"traitor\" and \"deja vu\".",
+        "prediction": "SOUR",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what are the names of all the movies in the terminator franchise?",
+        "ground_truth": "the names of the movies in the the terminator franchise are \"the terminator\", \"terminator 2: judgement day\", \"terminator 3: rise of the machines\", \"terminator salvation\", \"terminator genisys\", and \"terminator: dark fate\".",
+        "prediction": "- The Terminator (1984)\n- Terminator 2: Judgment Day (1991)\n- Terminator 3: Rise of the Machines (2003)\n- Terminator Salvation (2009)\n- Terminator Genisys (2015)\n- Terminator:",
+        "response": "Accuracy: True / False"
+    },
+    {
+        "query": "who hosted the grammy awards in 2019?",
+        "ground_truth": "alicia keys",
+        "prediction": "Alicia Keys.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "as the home team during 2023-01, how many of their games did charlotte hornets lose?",
+        "ground_truth": "4",
+        "prediction": "1-4",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "when was \"soul\" released on hulu?",
+        "ground_truth": "invalid question",
+        "prediction": "03/10/2024, 23:39:32 PT",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who is the lead singer of the band coldplay?",
+        "ground_truth": "chris martin",
+        "prediction": "Martin",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how deep is the deepest lake of new york?",
+        "ground_truth": "oneida lake, the deepest lake in new york, is 618 ft deep at its deepest point.",
+        "prediction": "802 feet",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "who were the members of the band led zeppelin?",
+        "ground_truth": "the members of led zeppelin were robert plant, jimmy page, john paul jones, and john bonham.",
+        "prediction": "Robert Plant, Jimmy Page, John Paul Jones, John Bonham",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which sport requires more players on the court, basketball or baseball?",
+        "ground_truth": "basketball",
+        "prediction": "Baseball requires more players on the court.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what album did major lazer release in 2020, which included the songs \"bam bam\" and \"trigger\"?",
+        "ground_truth": "major lazer released the album \"music is the weapon\" in 2020, which included the songs \"bam bam\" and \"trigger\".",
+        "prediction": "Major Lazer \u2013 7 Days in Tokyo",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which of nolan greenwald's movies has achieved the highest level of box office success on a global scale?",
+        "ground_truth": "kin",
+        "prediction": "Inception (2010)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what is the rob reiner's birthday?",
+        "ground_truth": "1947-03-06",
+        "prediction": "March 6",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "on which day did luke bryan's release most recently?",
+        "ground_truth": "2023-09-01",
+        "prediction": "March 21, 2024",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how tall is the eiffel tower?",
+        "ground_truth": "330 metres (1,083 ft)",
+        "prediction": "300 to 330 meters",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the highest-grossing movie in the box office in 2023?",
+        "ground_truth": "the highest-grossing movie in 2023 was barbie.",
+        "prediction": "Spider-Man: Across the Spider-Verse",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the total value of all foreign direct investment (fdi) inflows into the united states as of 2022?",
+        "ground_truth": "the total value of all fdi inflows into the united states was $5.25 trillion at the end of 2022.",
+        "prediction": "5.25",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "does broccoli or cauliflower have more vitamin c?",
+        "ground_truth": "broccoli has more vitamin c with 107% dv.",
+        "prediction": "Vitamin C 90% of the Daily Value (DV)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "how small is the smallest state in the us?",
+        "ground_truth": "the smallest state in the us, rhode island, is about 3,144 square kilometers big.",
+        "prediction": "Rhode Island",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which players have scored over 200 goals in the epl?",
+        "ground_truth": "alan shearer, harry kane, and wayne rooney have all won scored over 200 goals in the epl.",
+        "prediction": "**David McLean (over 160 goals in both)**",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which movie, judas and the black messiah or dunkirk, fared better in terms of oscar wins?",
+        "ground_truth": "dunkirk",
+        "prediction": "Judas and the Black Messiah fared better in terms of Oscar wins.",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which movie has a higher number of oscar wins for visual effects, avatar or the lord of the rings: the return of the king?",
+        "ground_truth": "both the lord of the rings: the return of the king and avatar have won best visual effects .",
+        "prediction": "Avatar",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "which player has the most career home runs in major league baseball among players who have never won a home run title?",
+        "ground_truth": "rafael palmeiro has the most career home runs in major league baseball among players who have never won a home run title, with 569 home runs.",
+        "prediction": "Ruth",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "was toy story the first film to use computer-generated imagery (cgi) to create a fully computer-generated character?",
+        "ground_truth": "actually, the first movie to use cgi to create a fully computer-generated character was \"young sherlock holmes\" in 1985, not \"toy story\" in 1995 as the premise suggests.",
+        "prediction": "No",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "who is the starting quarterback of the buffalo bills?",
+        "ground_truth": "josh allen",
+        "prediction": "Ryan Fitzpatrick (16)",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "in what year was the first \"spider-man\" film released?",
+        "ground_truth": "2002",
+        "prediction": "2021",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many points did denver nuggets put up on the board in their game on 2023-06-12?",
+        "ground_truth": "94",
+        "prediction": "28",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "what was the total box office earnings for die hard 2 worldwide?",
+        "ground_truth": "240031094",
+        "prediction": "$240,031,274",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "which movie received the best documentary feature honor at the academy awards in 2017?",
+        "ground_truth": "o.j.: made in america",
+        "prediction": "The movie that received the Best Documentary Feature honor at the Academy Awards in 2017 is \"The Look of Silence\".",
+        "response": "Accuracy: False"
+    }
+]
